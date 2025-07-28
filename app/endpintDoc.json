@@ -1,0 +1,114 @@
+{
+  "definitions": {},
+  "info": {
+    "description": "powered by Flasgger",
+    "termsOfService": "/tos",
+    "title": "A swagger API",
+    "version": "0.0.1"
+  },
+  "paths": {
+    "/api/companies/{company_id}/alerts/low-stock": {
+      "get": {
+        "parameters": [
+          {
+            "description": "The ID of the company to get low stock alerts for",
+            "in": "path",
+            "name": "company_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of low-stock alerts with supplier information",
+            "schema": {
+              "properties": {
+                "alerts": {
+                  "items": {
+                    "properties": {
+                      "current_stock": {
+                        "example": 5,
+                        "type": "integer"
+                      },
+                      "days_until_stockout": {
+                        "example": 12,
+                        "nullable": true,
+                        "type": "integer"
+                      },
+                      "product_id": {
+                        "example": 123,
+                        "type": "integer"
+                      },
+                      "product_name": {
+                        "example": "Widget A",
+                        "type": "string"
+                      },
+                      "sku": {
+                        "example": "WID-001",
+                        "type": "string"
+                      },
+                      "supplier": {
+                        "nullable": true,
+                        "properties": {
+                          "contact_email": {
+                            "example": "orders@supplier.com",
+                            "type": "string"
+                          },
+                          "id": {
+                            "example": 789,
+                            "type": "integer"
+                          },
+                          "name": {
+                            "example": "Supplier Corp",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "threshold": {
+                        "example": 20,
+                        "type": "integer"
+                      },
+                      "warehouse_id": {
+                        "example": 456,
+                        "type": "integer"
+                      },
+                      "warehouse_name": {
+                        "example": "Main Warehouse",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "total_alerts": {
+                  "example": 1,
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "404": {
+            "description": "Company not found",
+            "schema": {
+              "properties": {
+                "error": {
+                  "example": "Company not found",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "summary": "Get low-stock alerts for a company.",
+        "tags": [
+          "Alerts"
+        ]
+      }
+    }
+  },
+  "swagger": "2.0"
+}
