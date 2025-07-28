@@ -35,8 +35,8 @@ This document summarizes all deliverables, instructions to setup, and usage.
 ### 1. Clone or Download the repository
 
 ```bash
-git clone 
-cd InventoryManagementTask
+git clone https://github.com/aakashmohole/Bynry-Case-Study-Task.git
+cd Bynry-Case-Study-Task
 ```
 
 ### 2. Create and Initialize PostgreSQL Database
@@ -53,7 +53,7 @@ psql -h  -U  -d  -f databaseDesign.sql
 
 ### 3. Seed Sample Data
 
-(Optionally, seed sample data with provided insert statements – see Part 2 and Part 3 sample inserts for products, suppliers, warehouses, sales, and thresholds. This helps to test and see meaningful API output.)
+(Optionally, seed sample data with sample inserts for products, suppliers, warehouses, sales, and thresholds. This helps to test and see meaningful API output.)
 
 ### 4. Configure Flask App
 
@@ -120,8 +120,10 @@ Return low-stock alerts for products owned by a company, filtered by:
 - Includes primary supplier info for reordering
 
 #### Example Response
+![resukt](response.png)
 
-![Example Response
+```
+}
   "alerts": [
     {
       "product_id": 123,
@@ -171,18 +173,8 @@ Return low-stock alerts for products owned by a company, filtered by:
 - For production deployments, use a WSGI server like Gunicorn.
 - Sample data should be seeded for meaningful testing.
 
-## How to Extend
 
-- Add authentication & authorization for API security.
-- Implement pagination for alerts endpoint if large data sets.
-- Expand product attributes and bundle complexities.
-- Create UI/dashboard for live inventory monitoring.
-- Add webhooks or notifications for triggered alerts.
-
-## Contact / Support
-
-For questions or help, please reach out to [your email/contact].
+## Contact 
+email - aakashmohole@gmail.com
 
 **Thank you for reviewing my Inventory Management System implementation!**
-
-If you want me to also generate `databaseDesign.sql` file content or help package all this into a zipped folder, just ask!
