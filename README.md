@@ -22,7 +22,7 @@ This document summarizes all deliverables, instructions to setup, and usage.
 │   ├── debuggedCode.py       # Corrected and debugged version of Part 1 code for product creation
 │   ├── requirements.txt      # Python dependencies
 │   └── endpointDoc.json      # Exported OpenAPI JSON specification from Swagger docs
-│   |── .env      
+│   |── .env                  # Add .env with credintial DATABASE_URL FLASK_ENV FLASK_APP you dont see this in repo i ignored this.
 |── stockflowenv/
 ├── databaseDesign.sql        # SQL file containing all table creation queries for Postgres schema
 ├── response.png              # Screenshot of example API response output (low-stock alerts)
